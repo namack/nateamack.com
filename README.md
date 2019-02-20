@@ -1,6 +1,6 @@
 # [nateamack.com](https://nateamack.com)
 
-Documented learning in the public.
+Documented learning in public.
 
 **Website Framework:** [Gatsby](https://www.gatsbyjs.org/)
 
