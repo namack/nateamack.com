@@ -1,6 +1,6 @@
 # [nateamack.com](https://nateamack.com)
 
-The personal blog of Nate Amack
+Documented learning in public.
 
 **Website Framework:** [Gatsby](https://www.gatsbyjs.org/)
 
