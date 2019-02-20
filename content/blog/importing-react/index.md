@@ -25,7 +25,7 @@ I initially thought this was a fancy new way of importing React that would allow
 
 ## Why do we need to import React anyway?
 
-You may have noticed that even though you need to import `React`, you don’t actually use it anywhere in your file. Usually, it is bad practice to leave unused variables sitting around in a file and your linter should complain. This is not the case for `React`, however, since JSX requires it to be in scope. Eventually though, you won’t have to import `React` at all for your JSX to know what is going on. You’ll only have to import the parts of React that you actually need, like hooks, context, and types (😏). In fact, Ember has already dropped the requirement for importing `Ember` as of [Ember 2.16]([https://www.emberjs.com/blog/2017/10/11/ember-2-16-released.html](https://www.emberjs.com/blog/2017/10/11/ember-2-16-released.html)).
+You may have noticed that even though you need to import `React`, you don’t actually use it anywhere in your file. Usually, it is bad practice to leave unused variables sitting around in a file and your linter should complain. This is not the case for `React`, however, since JSX requires it to be in scope. Eventually though, you won’t have to import `React` at all for your JSX to know what is going on. You’ll only have to import the parts of React that you actually need, like hooks, context, and types (😏). In fact, Ember has already dropped the requirement for importing `Ember` as of [Ember 2.16](https://www.emberjs.com/blog/2017/10/11/ember-2-16-released.html).
 
 ## Which one should you use?
 
