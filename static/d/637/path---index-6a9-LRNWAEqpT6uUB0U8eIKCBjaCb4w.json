@@ -1,0 +1,1 @@
+{"data":{"site":{"siteMetadata":{"title":"Nate Amack"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"Importing React When I first started writing React, I noticed the requirement of importing React in my JSX files: This wasn’t too much of a…","fields":{"slug":"/hello-world/"},"frontmatter":{"date":"February 19, 2019","title":"Importing React"}}}]}},"pageContext":{}}
