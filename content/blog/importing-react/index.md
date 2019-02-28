@@ -29,8 +29,14 @@ You may have noticed that even though you need to import `React`, you don’t ac
 
 ## Which one should you use?
 
-At this point in time, it doesn’t matter. `React` just needs to be in scope for JSX to render correctly. How you get it there is up to you: it is a stylistic choice. That being said, consistency is more important than style, so just be consistent throughout a project.
+You should use:
 
-If you do end up importing all of React’s exports into the `React` namespace using `import * as React from ‘react’`, you won’t be able to use any more named imports in the file. This is because everything has already been exported - just into the `React` namespace. This is also technically the case when you import `React` as the default import using `import React from ‘react’`. You are able to use anything in the namespace, like `React.useState`. Personally, I prefer to use named imports to reduce the need for prepending everything with `React.`. Then, when we don’t need to import `React` at all, it will be easy to update using a simple find and replace.
+```
+import React from 'react';
+```
 
-The ability to import `React` as the default export is really just an illusion by Babel to make things look nice. Without it, we would **have** to write `import * as React from ‘react’` everywhere and we wouldn’t have a choice. So make a choice and stick with it - at least on a per project basis.
+This is the most flexible way to import `React`. Although there is no technical difference between the two, there are benefits to using more flexible syntax.
+
+If you do end up importing all of React’s exports into the `React` namespace using `import * as React from ‘react’`, you won’t be able to use any more named imports in the file. This is because everything has already been exported - just into the `React` namespace. Because of this, anytime you need to use an export from React, you'll have to namespace it under `React`; i.e. `React.useState()`. Not only is this unnecessarily cumbersome and verbose, there may be a day when we don't need to import `React` at all. If this day comes, it will be much simpler to remove one line of code per file rather than many. If you are reading this and cringing at the thought of having to manually import each named export of React (`import { useState } from 'react';`) then I would argue you have a different issue. Your code editor should be declaring this import for you automatically and even ordering the imports!
+
+By importing `React` intead of all of the exports into the `React` namespace we'll have less messy looking code that will be easier to maintain in the future.
