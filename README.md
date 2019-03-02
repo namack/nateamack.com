@@ -2,6 +2,6 @@
 
 Documented learning in public.
 
-**Website Framework:** [Gatsby](https://www.gatsbyjs.org/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8d34f1f-8680-47a2-a970-b1e1e171ce8e/deploy-status)](https://app.netlify.com/sites/silly-almeida-220b2c/deploys)
 
-**Hosted By:** [GitHub Pages](https://pages.github.com/)
+**Website Framework:** [Gatsby](https://www.gatsbyjs.org/)
