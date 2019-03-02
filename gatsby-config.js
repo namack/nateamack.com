@@ -1,78 +1,76 @@
+const config = require('./config')
+
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+
 module.exports = {
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    title: `Nate Amack`,
-    author: `Nate Amack`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://nateamack.com`,
-    social: {
-      twitter: `nate_amack`
-    }
+    siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'post',
         path: `${__dirname}/content/blog`,
-        name: `blog`
-      }
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-mdx',
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-external-links',
             options: {
-              maxWidth: 590
-            }
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
+            },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-images',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              maxWidth: 830,
+              quality: 90,
+              withWebp: true,
+              linkImagesToOriginal: false,
+            },
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
-        ]
-      }
+          // TODO: Replace with "mdx-component-autolink-headers"
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              maintainCase: false,
+            },
+          },
+        ],
+      },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-lodash',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        trackingId: `UA-50498805-4`
-      }
+        name: config.siteTitleAlt,
+        short_name: config.siteTitleManifest,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.favicon,
+      },
     },
-    `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Nate Amack`,
-        short_name: `Nate Amack`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/icon.png`
-      }
-    },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`
-      }
-    }
-  ]
-};
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify',
+  ],
+}

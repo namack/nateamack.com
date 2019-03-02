@@ -1,2 +1,2 @@
 User-agent: *
-Disallow:
+sitemap: https://nateamack.com/sitemap.xml
