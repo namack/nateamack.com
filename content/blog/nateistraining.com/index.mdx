@@ -1,0 +1,27 @@
+---
+title: NateIsTraining.com
+date: "2019-03-25"
+categories:
+  - Strava
+  - Google Cloud Functions
+  - Github
+  - GatsbyJS
+  - Netlify
+---
+
+This weekend I finally released stable `v0` of my website, [NateIsTraining.com](https://nateistraining.com).
+
+I get to spend a lot of time thinking during my long workouts as I train for my upcoming Ironman in September. During one of these long workouts a thought occured to me: it would be cool to create a blog style website of my own for my friends and family to follow along with my training progress. [Strava](https://www.strava.com) already does a great job of this through its website and app, however I have many family members who don't already have an account to log in and follow along. Ideally, it would be best if they could just click a link and see what I am up to (hint: I'm training...) without having to go through a whole new service.
+
+I had recently just set up this blog with [GatsbyJS](https://gatsbyjs.org) and [Netlify](https://www.netlify.com), and had been dabbling with [Google Cloud Functions](https://cloud.google.com/functions). I checked out [Strava](https://www.strava.com)'s API, and boom, all the ingredients were there. [Strava](https://www.strava.com) would send notifications to a [Google Cloud Function](https://cloud.google.com/functions), which would then in turn generate a markdown file, commit it to a [GatsbyJS](https://gatsbyjs.org) project on [Github](https://github.com/namack), and [Netlify](https://www.netlify.com) would take care of the rest...
+
+I'll be spending some time detailing how this system is set up along with some of the things I learned along the way in some upcoming posts. From a high level, the system is facilitated by a single Google Cloud Function. It listens for a webhook from Strava that is sent whenever I finish a workout, makes some subsequent requests to get more details about the activity, generates a markdown blog post, and commits it to Github. From there, Netlify's awesome autodeploy function builds the website and pushes it live.
+
+This project was mainly a good excuse to play with some different technologies in a unique way - I don't recommend the "markdown-as-a-database" approach for production applications! It is a super simplified view of each activity and was just plain fun to build.
+
+The system is comprised of two repositories, hosted on Github for reference:
+* [Gatsby Blog repo](https://github.com/namack/nateistraining.com)
+* [Cloud Function repo](https://github.com/namack/cloud-functions)
+
+P.S. - You'll probably recognize the theme 😉 (thank you, [LekoArts](https://www.lekoarts.de/)!)
+
