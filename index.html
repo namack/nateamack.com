@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="og:title" content="Nate Amack, Software Developer" />
+    <meta name="og:description" content="Nate Amack, Software Developer" />
+    <meta name="og:image" content="https://nateamack.com/og.jpg" />
+    <meta name="og:url" content="https://nateamack.com/" />
+    <meta name="og:site_name" content="Nate Amack" />
+    <meta name="og:type" content="website" />
+    <meta name="description" content="Nate Amack, Software Developer" />
+    <meta name="image" content="https://nateamack.com/og.jpg" />
+    <meta itemprop="name" content="Nate Amack" />
+    <meta itemprop="description" content="Nate Amack, Software Developer" />
+    <meta itemprop="image" content="https://nateamack.com/og.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nate Amack, Software Developer" />
+    <meta name="twitter:description" content="Nate Amack, Software Developer" />
+    <meta name="twitter:site" content="@nate_amack" />
+    <meta name="twitter:creator" content="@nate_amack" />
+    <meta name="twitter:image:src" content="https://nateamack.com/og.jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Nate Amack, Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --amack-bg-color: #151618;
+        --amack-text-color: #f3f2f2;
+        --amack-accent-primary: #18fbdb;
+        --amack-accent-secondary: #fe74b4;
+        --amack-font-size-lg: 1.5rem;
+        --amack-font-size-md: 1rem;
+        --amack-font-size-sm: 0.75rem;
+        --amack-font-weight-md: 400;
+        --amack-font-weight-lg: 700;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      body {
+        background-color: var(--amack-bg-color);
+        color: var(--amack-text-color);
+        font-family: "Space Mono", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-bottom: 0.25rem;
+        line-height: 1.5;
+      }
+
+      h1 {
+        font-size: var(--amack-font-size-lg);
+      }
+
+      h2,
+      h3,
+      h4,
+      p {
+        font-size: var(--amack-font-size-md);
+        font-weight: var(--amack-font-weight-md);
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--amack-text-color);
+      }
+
+      a:hover {
+        color: var(--amack-accent-secondary);
+        text-decoration: underline;
+      }
+
+      .main-content {
+        margin: 0 auto;
+        max-width: 40rem;
+        padding: 1rem;
+        padding-top: 3rem;
+      }
+
+      .top-level {
+        display: flex;
+        margin-bottom: 3rem;
+        gap: 1rem;
+      }
+
+      .top-level--image {
+        flex: 0 0 7rem;
+        object-fit: contain;
+        background-color: #2e2f31;
+        padding: 0.5rem 0;
+        border-radius: 20px;
+      }
+
+      .top-level--image img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-top: -12px;
+      }
+
+      .top-level--details {
+        flex: 1 1 auto;
+        margin-top: 1.75rem;
+      }
+
+      .top-level--details h2 {
+        opacity: 65%;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      .section--title {
+        margin-bottom: 1rem;
+        font-weight: var(--amack-font-weight-lg);
+      }
+
+      .social-list {
+        max-width: 30rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 0.5rem;
+      }
+
+      .social-list li {
+        display: inline-block;
+      }
+
+      .project-item {
+        margin-bottom: 2rem;
+      }
+
+      .project-item--timespan {
+        opacity: 50%;
+      }
+
+      .project-item--details h3 {
+        font-weight: var(--amack-font-weight-lg);
+        margin-bottom: 0.75rem;
+      }
+
+      .project-item--details h3 a {
+        margin-right: 0.5rem;
+      }
+
+      .project-item--details p {
+        opacity: 80%;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-item--details ul {
+        opacity: 50%;
+      }
+
+      .project-item--details li {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-item--details li:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      @media screen and (min-width: 500px) {
+        .top-level {
+          gap: 2rem;
+        }
+
+        .social-list {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .project-item {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .project-item--timespan {
+          flex: 0 0 10rem;
+        }
+
+        .project-item--details {
+          flex: 1 1 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="top-level">
+        <div class="top-level--image">
+          <img src="./nate.png" alt="Nate Amack" />
+        </div>
+        <div class="top-level--details">
+          <h1>Nate Amack</h1>
+          <h2>Software Developer</h2>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section--title">About</h2>
+        <p>
+          Hi, I'm Nate. I enjoy building software products on the internet. I
+          especially like TypeScript and Go. Outside of work, I like running
+          marathons and spending time with my family.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="section--title">Internet</h2>
+        <ul class="social-list">
+          <li>
+            <a href="https://github.com/namack" target="_blank">Github</a>
+          </li>
+          <li>
+            <a href="https://www.strava.com/athletes/15811743" target="_blank"
+              >Strava</a
+            >
+          </li>
+          <li>
+            <a href="https://warpcast.com/amack.eth" target="_blank"
+              >Warpcast</a
+            >
+          </li>
+          <li>
+            <a href="https://x.com/nate_amack" target="_blank">@nate_amack</a>
+          </li>
+          <li>
+            <a href="https://etherscan.io/address/amack.eth" target="_blank"
+              >amack.eth</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://basescan.org/address/amack.base.eth"
+              target="_blank"
+              >amack.base.eth</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class="section--title">Work Experience</h2>
+        <div class="project-item">
+          <p class="project-item--timespan">2021 - Present</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://mutualmarkets.ai" target="_blank"
+                >MutualMarkets</a
+              >&#8599;
+            </h3>
+            <h4>VP of Engineering &#8594; CTO</h4>
+            <p>
+              Architectural design and implementation of the MutualMarkets
+              product from the ground up.
+            </p>
+            <ul>
+              <li>Vue</li>
+              <li>TypeScript</li>
+              <li>Prisma</li>
+              <li>Node</li>
+              <li>tRPC</li>
+              <li>Go</li>
+              <li>RBAC</li>
+              <li>AWS</li>
+              <li>Astro</li>
+              <li>Firestore</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2021</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://shapeshift.com/" target="_blank">ShapeShift</a
+              >&#8599;
+            </h3>
+            <h4>Engineering Manager</h4>
+            <p>
+              Led team of 7 engineers to develop and launch DEX trading on
+              multiple chains through the web and mobile apps. Improved
+              developer experience and reduced bugs by implementing strict mode
+              in TypeScript projects.
+            </p>
+            <ul>
+              <li>React</li>
+              <li>React Native</li>
+              <li>TypeScript</li>
+              <li>Node</li>
+              <li>GraphQL</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2018 - 2021</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://www.gospotcheck.com/" target="_blank"
+                >GoSpotCheck</a
+              >&#8599;
+            </h3>
+            <h4>Software Engineer &#8594; Senior Software Engineer</h4>
+            <p>
+              Worked on a team of senior engineers to design, architect, and
+              implement low code platform that executes logic based on real time
+              contextual data to allow real time workflow execution based on
+              customer data tables.
+            </p>
+            <ul>
+              <li>React</li>
+              <li>React Native</li>
+              <li>TypeScript</li>
+              <li>Go</li>
+              <li>gRPC</li>
+              <li>GCP</li>
+              <li>Firestore</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2017 - 2018</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://www.biggerpockets.com/" target="_blank"
+                >BiggerPockets</a
+              >&#8599;
+            </h3>
+            <h4>Software Engineer</h4>
+            <p>
+              Implementation of complex front end applications with both client
+              side and server side rendering capabilities. Involved in front end
+              architectural planning and execution of projects, ranging from
+              small reusable components to large stand alone applications.
+              Helped increase team expertise in front end technology through
+              pairing and group training.
+            </p>
+            <ul>
+              <li>Javascript</li>
+              <li>Ruby</li>
+              <li>React</li>
+              <li>Redux</li>
+              <li>Ruby on Rails</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2015 - 2017</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://www.placewise.com/" target="_blank"
+                >Placewise Media</a
+              >&#8599;
+            </h3>
+            <h4>Software Engineer</h4>
+            <p>
+              Design and implementation of the company API and front end
+              application allowing customers, the customer account team, and
+              third party retailers to manage content on over 700 shopping
+              center websites.
+            </p>
+            <ul>
+              <li>Javascript</li>
+              <li>Ruby</li>
+              <li>Ember</li>
+              <li>Ruby on Rails</li>
+              <li>Vue</li>
+              <li>JSONAPI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section--title">Side Projects</h2>
+        <div class="project-item">
+          <p class="project-item--timespan">Current</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://mansion.work" target="_blank">Mansion</a>&#8599;
+            </h3>
+            <p>Send invoices and get paid onchain in USDC.</p>
+            <ul>
+              <li>React</li>
+              <li>Tanstack Query/Router</li>
+              <li>Tailwind</li>
+              <li>wagmi</li>
+              <li>OnChainKit</li>
+              <li>Node</li>
+              <li>tRPC</li>
+              <li>Cloudflare</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2019</p>
+          <div class="project-item--details">
+            <h3>
+              <a href="https://nateistraining.com" target="_blank"
+                >Nate is Training</a
+              >&#8599;
+            </h3>
+            <p>Follow Nate's Ironman training and track his progress.</p>
+            <ul>
+              <li>GatsbyJS</li>
+              <li>Google Cloud Functions</li>
+              <li>Strava API</li>
+              <li>TypeScript</li>
+              <li>Netlify</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <p class="project-item--timespan">2015</p>
+          <div class="project-item--details">
+            <h3>Blue Bear Creative Voting App</h3>
+            <p>Crowd source voting for brand social media ads.</p>
+            <ul>
+              <li>Ruby on Rails</li>
+              <li>Heroku</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style></style>
+</html>
